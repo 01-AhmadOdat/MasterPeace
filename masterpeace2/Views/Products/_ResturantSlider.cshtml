@@ -1,0 +1,63 @@
+﻿@model IEnumerable<masterpeace2.Resturant>
+
+
+
+@foreach (var item in Model)
+{
+    @*<a href="https://localhost:44350/Products/Items">*@
+        <div class="u-s-m-b-30">
+            <div class="product-o product-o--hover-on">
+                <div class="product-o__wrap">
+
+                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="https://localhost:44350/Products/Items">
+
+                        <img class="aspect__img" src="~/photos for masterpeace/@Html.DisplayFor(model => item.Image)" alt="">
+                    </a>
+                    <div class="product-o__action-wrap">
+                        @*<ul class="product-o__action-list">
+                            <li>
+
+                                <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick View"><i class="fas fa-search-plus"></i></a>
+                            </li>
+                            <li>
+
+                                <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a>
+                            </li>
+                            <li>
+
+                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                            </li>
+                            <li>
+
+                                <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a>
+                            </li>
+                        </ul>*@
+                    </div>
+                </div>
+
+                @*<span class="product-o__category">
+
+                    <a href="#">Electronics</a>
+                </span>*@
+
+                <span class="product-o__name">
+
+                    <a href="https://localhost:44350/Products/Items">@Html.DisplayFor(model => item.Name)</a>
+                </span>
+                <div class="product-o__rating gl-rating-style">
+                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+
+                    <span class="product-o__review">(0)</span>
+                </div>
+
+                <span class="product-o__price">
+                    $125.00
+
+                    <span class="product-o__discount">$160.00</span>
+                </span>
+            </div>
+        </div>
+    @*</a>*@
+}
+
+

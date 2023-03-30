@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="269ed2b134a342698f9df670a7be0f74" Name="Diagram1" ZoomLevel="116">
+        <EntityTypeShape EntityType="masterpeaceModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.AspNetRole" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.AspNetUser" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.Cart" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.Category" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.Comment" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.Farm" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.Product" Width="1.5" PointX="7.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.Resturant" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="masterpeaceModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="masterpeaceModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="masterpeaceModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="masterpeaceModel.FK_Carts_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="masterpeaceModel.FK_Comments_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="masterpeaceModel.FK_Farms_Farms" ManuallyRouted="false" />
+        <AssociationConnector Association="masterpeaceModel.FK_Resturant_Resturant" ManuallyRouted="false" />
+        <AssociationConnector Association="masterpeaceModel.FK_Carts_Carts" ManuallyRouted="false" />
+        <AssociationConnector Association="masterpeaceModel.FK_Products_Categories1" ManuallyRouted="false" />
+        <AssociationConnector Association="masterpeaceModel.FK_Products_Resturant" ManuallyRouted="false" />
+        <AssociationConnector Association="masterpeaceModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="masterpeaceModel.Order" Width="1.5" PointX="9.75" PointY="12.875" />
+        <AssociationConnector Association="masterpeaceModel.FK_Orders_AspNetUsers" />
+        <AssociationConnector Association="masterpeaceModel.FK_Orders_Products" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

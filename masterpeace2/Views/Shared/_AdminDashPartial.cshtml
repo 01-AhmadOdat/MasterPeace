@@ -1,0 +1,20 @@
+﻿@*@using Microsoft.AspNet.Identity*@
+
+
+@if (Request.IsAuthenticated)
+
+{
+
+    if (User.IsInRole("admin"))
+    {
+        
+            <li class="menu-item">
+                @Html.ActionLink("Dashboard","Index","Resturants", null, new { @class = "pq-submenu-icon" })
+            </li>
+        
+
+    }
+
+
+
+}
