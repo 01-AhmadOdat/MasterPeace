@@ -1,0 +1,145 @@
+﻿@model masterpeace2.AspNetUser
+@{
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@*@{
+    ViewBag.Title = "Details";
+}*@
+
+
+
+
+<!--====== App Content ======-->    
+<div class="app-content">
+
+    <!--====== Section 1 ======-->
+    <div class="u-s-p-y-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+            <div class="container">
+                <div class="breadcrumb">
+                    <div class="breadcrumb__wrap">
+                        <ul class="breadcrumb__list">
+                            <li class="has-separator">
+
+                                <a href="https://localhost:44350/Home/Index1">Home</a>
+                            </li>
+                            <li class="is-marked">
+
+                                <a href="https://localhost:44350/AspNetUsers/UserProfile">My Account</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section 1 ======-->
+    <!--====== Section 2 ======-->
+    <div class="u-s-p-b-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+            <div class="dash">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-12">
+
+                            <!--====== Dashboard Features ======-->
+                            <div class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30">
+                                <div class="dash__pad-1">
+
+                                    <span class="dash__text u-s-m-b-16">Hello, @Model.FirstName</span>
+                                    <ul class="dash__f-list">
+                                        @*<li>
+
+                                                <a href="dashboard.html">Manage My Account</a>
+                                            </li>*@
+                                        <li>
+
+                                            <a class="dash-active" href="https://localhost:44350/AspNetUsers/UserProfile">My Profile</a>
+                                        </li>
+                                        @*<li>
+
+                                                <a href="dash-address-book.html">Address Book</a>
+                                            </li>*@
+                                        @*<li>
+
+                                            <a href="dash-track-order.html">Track Order</a>
+                                        </li>*@
+                                        <li>
+
+                                            <a href="https://localhost:44350/AspNetUsers/Orders">My Orders</a>
+                                        </li>
+                                        @*<li>
+
+                                                <a href="dash-payment-option.html">My Payment Options</a>
+                                            </li>*@
+                                        @*<li>
+
+                                                <a href="dash-cancellation.html">My Returns & Cancellations</a>
+                                            </li>*@
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <!--====== End - Dashboard Features ======-->
+                        </div>
+                        <div class="col-lg-9 col-md-12">
+                                <div class="col-md-8 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Details</h4>
+                                            @*<p class="card-description">
+                                                Basic form layout
+                                            </p>*@
+                                            <form class="forms-sample">
+
+                                                <div class="form-group">
+                                                    <label for="Category Name">First Name</label>
+                                                    <input type="text" disabled class="form-control" id="Category Name" placeholder="Username" value=" @Html.DisplayFor(model => model.FirstName)">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="Category Name">Last Name</label>
+                                                    <input type="text" disabled class="form-control" id="Category Name" placeholder="Username" value=" @Html.DisplayFor(model => model.LastName)">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="Category Name">Email</label>
+                                                    <input type="text" disabled class="form-control" id="Category Name" placeholder="Username" value=" @Html.DisplayFor(model => model.Email)">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="Category Name">Phone Num</label>
+                                                    <input type="text" disabled class="form-control" id="Category Name" placeholder="Username" value=" @Html.DisplayFor(model => model.PhoneNumber)">
+                                                </div>
+                                                @*<div class="form-group">
+            <label for="Description">Description</label>
+            <input type="text" disabled class="form-control" id="Description" placeholder="Description" value="@Html.DisplayFor(model => model.FirstName)">
+        </div>*@
+                                                <p>
+                                                    @Html.ActionLink("Edit", "UserEdit", new { id = Model.Id }) |
+                                                    @Html.ActionLink("Back to List", "UserProfile")
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                @*</div>*@
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section Content ======-->
+    </div>
+    <!--====== End - Section 2 ======-->
+</div>
+<!--====== End - App Content ======-->
+
+

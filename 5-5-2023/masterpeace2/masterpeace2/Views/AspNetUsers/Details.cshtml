@@ -1,0 +1,171 @@
+﻿@model masterpeace2.AspNetUser
+@{
+    Layout = "~/Views/Shared/_LayoutAdminDash.cshtml";
+}
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@*<div>
+    <h4>AspNetUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailConfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailConfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PasswordHash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecurityStamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecurityStamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumberConfirmed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwoFactorEnabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LockoutEndDateUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LockoutEnabled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LockoutEnabled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccessFailedCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccessFailedCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            @*<h4 class="card-title">Category</h4>
+            <p class="card-description">
+                Basic form layout
+            </p>*@
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="text" disabled class="form-control" id="Email" placeholder="Username" value="@Html.DisplayFor(model => model.Email)">
+                </div>
+                <div class="form-group">
+                    <label for="FirstName">FirstName</label>
+                    <input type="text" disabled class="form-control" id="FirstName" placeholder="Username" value="@Html.DisplayFor(model => model.FirstName)">
+                </div>
+                <div class="form-group">
+                    <label for="LastName">LastName</label>
+                    <input type="text" disabled class="form-control" id="LastName" placeholder="Username" value="@Html.DisplayFor(model => model.LastName)">
+                </div>
+                @*<div class="form-group">
+                    <label for="Image">Image</label><br />
+                    <img width="150" src="~/photos for masterpeace/@Html.DisplayFor(model => model.Image)" />
+                   
+                </div>*@
+                <div class="form-group">
+                    <label for="PhoneNumber">PhoneNumber</label>
+                    <input type="text" disabled class="form-control" id="PhoneNumber" placeholder="Description" value="@Html.DisplayFor(model => model.PhoneNumber)">
+                </div>
+                @*<div class="form-check form-check-flat form-check-primary">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            Remember me
+                        </label>
+                    </div>*@
+                @*<button type="submit" class="btn btn-primary me-2"> <a href="https://localhost:44350/Categories/Edit">Edit</a></button>*@
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id, @class = "btn btn-primary me-2" }) |
+                @Html.ActionLink("Back to List", "dashuser", new { @class = "btn btn-primary me-2" })
+
+                @*<button class="btn btn-light">Cancel</button>*@
+            </form>
+        </div>
+    </div>
+</div>
+

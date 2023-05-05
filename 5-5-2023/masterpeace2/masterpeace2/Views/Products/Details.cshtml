@@ -1,0 +1,142 @@
+﻿@model masterpeace2.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@*<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Category_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Category_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resturant.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resturant.UserId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label for="Email">Product Name</label>
+                    <input type="text" disabled class="form-control" id="Email" placeholder="Username" value="@Html.DisplayFor(model => model.Product_Name)">
+                </div>
+                <div class="form-group">
+                    <label for="Price">Price</label>
+                    <input type="text" disabled class="form-control" id="Price" placeholder="Username" value="@Html.DisplayFor(model => model.Price)">
+                </div>
+                @*<div class="form-group">
+            <label for="LastName">LastName</label>
+            <input type="text" disabled class="form-control" id="LastName" placeholder="Username" value="@Html.DisplayFor(model => model.LastName)">
+        </div>*@
+                <div class="form-group">
+                    <label for="Category">Category</label>
+                    <input type="text" disabled class="form-control" id="Category" placeholder="Description" value="@Html.DisplayFor(model => model.Category.Category_Name)">
+                </div>
+                <div class="form-group">
+                    <label for="Resturant">Resturant</label>
+                    <input type="text" disabled class="form-control" id="Resturant" placeholder="Description" value="@Html.DisplayFor(model => model.Resturant.Name)">
+                </div>
+                <div class="form-group">
+                    <label for="Image">Image1</label><br />
+                    <img width="150" src="~/photos for masterpeace/@Html.DisplayFor(model => model.Image1)" />
+                </div>
+                <div class="form-group">
+                    <label for="Image">Image2</label><br />
+                    <img width="150" src="~/photos for masterpeace/@Html.DisplayFor(model => model.Image2)" />
+                </div>
+                <div class="form-group">
+                    <label for="Image">Image3</label><br />
+                    <img width="150" src="~/photos for masterpeace/@Html.DisplayFor(model => model.Image3)" />
+                </div>
+                <div class="form-group">
+                    <label for="Image">Image4</label><br />
+                    <img width="150" src="~/photos for masterpeace/@Html.DisplayFor(model => model.Image4)" />
+                </div>
+
+                @*<div class="form-check form-check-flat form-check-primary">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input">
+                Remember me
+            </label>
+        </div>*@
+                @*<button type="submit" class="btn btn-primary me-2"> <a href="https://localhost:44350/Categories/Edit">Edit</a></button>*@
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Category_ID, @class = "btn btn-primary me-2" }) |
+                @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-primary me-2" })
+
+                @*<button class="btn btn-light">Cancel</button>*@
+            </form>
+        </div>
+    </div>
+</div>

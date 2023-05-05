@@ -1,0 +1,341 @@
+﻿
+@model masterpeace2.AspNetUser
+
+<!--====== App Content ======-->
+<div class="app-content">
+
+    <!--====== Section 1 ======-->
+    <div class="u-s-p-y-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+            <div class="container">
+                <div class="breadcrumb">
+                    <div class="breadcrumb__wrap">
+                        <ul class="breadcrumb__list">
+                            <li class="has-separator">
+
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="is-marked">
+
+                                <a href="checkout.html">Checkout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section 1 ======-->
+    <!--====== Section 2 ======-->
+    <div class="u-s-p-b-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="checkout-msg-group">
+                            <div class="msg u-s-m-b-30">
+
+                                <span class="msg__text">
+                                    Returning customer?
+
+                                    <a class="gl-link" href="#return-customer" data-toggle="collapse">Click here to login</a>
+                                </span>
+                                <div class="collapse" id="return-customer" data-parent="#checkout-msg-group">
+                                    <div class="l-f u-s-m-b-16">
+
+                                        <span class="gl-text u-s-m-b-16">If you have an account with us, please log in.</span>
+                                        <form class="l-f__form">
+                                            <div class="gl-inline">
+                                                <div class="u-s-m-b-15">
+
+                                                    <label class="gl-label" for="login-email">E-MAIL *</label>
+
+                                                    <input class="input-text input-text--primary-style" type="text" id="login-email" placeholder="Enter E-mail">
+                                                </div>
+                                                <div class="u-s-m-b-15">
+
+                                                    <label class="gl-label" for="login-password">PASSWORD *</label>
+
+                                                    <input class="input-text input-text--primary-style" type="text" id="login-password" placeholder="Enter Password">
+                                                </div>
+                                            </div>
+                                            <div class="gl-inline">
+                                                <div class="u-s-m-b-15">
+
+                                                    <button class="btn btn--e-transparent-brand-b-2" type="submit">LOGIN</button>
+                                                </div>
+                                                <div class="u-s-m-b-15">
+
+                                                    <a class="gl-link" href="lost-password.html">Lost Your Password?</a>
+                                                </div>
+                                            </div>
+
+                                            <!--====== Check Box ======-->
+                                            <div class="check-box">
+
+                                                <input type="checkbox" id="remember-me">
+                                                <div class="check-box__state check-box__state--primary">
+
+                                                    <label class="check-box__label" for="remember-me">Remember Me</label>
+                                                </div>
+                                            </div>
+                                            <!--====== End - Check Box ======-->
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="msg">
+
+                                <span class="msg__text">
+                                    Have a coupon?
+
+                                    <a class="gl-link" href="#have-coupon" data-toggle="collapse">Click Here to enter your code</a>
+                                </span>
+                                <div class="collapse" id="have-coupon" data-parent="#checkout-msg-group">
+                                    <div class="c-f u-s-m-b-16">
+
+                                        <span class="gl-text u-s-m-b-16">Enter your coupon code if you have one.</span>
+                                        <form class="c-f__form">
+                                            <div class="u-s-m-b-16">
+                                                <div class="u-s-m-b-15">
+
+                                                    <label for="coupon"></label>
+
+                                                    <input class="input-text input-text--primary-style" type="text" id="coupon" placeholder="Coupon Code">
+                                                </div>
+                                                <div class="u-s-m-b-15">
+
+                                                    <button class="btn btn--e-transparent-brand-b-2" type="submit">APPLY</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section Content ======-->
+    </div>
+    <!--====== End - Section 2 ======-->
+    <!--====== Section 3 ======-->
+    <div class="u-s-p-b-60">
+
+        <!--====== Section Content ======-->
+        <div class="section__content">
+            <div class="container">
+                <div class="checkout-f">
+                    <div class="row">
+                        @*<form class="checkout-f__delivery">*@
+                        <form class="needs-validation" method="post" action="/Home/CheckOutSave">
+                            <div class="col-lg-6">
+                                <h1 class="checkout-f__h1">DELIVERY INFORMATION</h1>
+
+                                <div class="u-s-m-b-30">
+                                    <div class="u-s-m-b-15">
+
+                                        <!--====== Check Box ======-->
+                                        <div class="check-box">
+
+                                            <input type="checkbox" id="get-address">
+                                            <div class="check-box__state check-box__state--primary">
+
+                                                <label class="check-box__label" for="get-address">Use default shipping and billing address from account</label>
+                                            </div>
+                                        </div>
+                                        <!--====== End - Check Box ======-->
+                                    </div>
+
+                                    <!--====== First Name, Last Name ======-->
+                                    <div class="gl-inline">
+                                        <div class="u-s-m-b-15">
+
+                                            <label class="gl-label" for="billing-fname">FIRST NAME *</label>
+
+                                            <input class="input-text input-text--primary-style" type="text" value="@Html.DisplayFor(model => model.FirstName)" name="fname" id="billing-fname" data-bill="">
+                                        </div>
+                                        <div class="u-s-m-b-15">
+
+                                            <label class="gl-label" for="billing-lname">LAST NAME *</label>
+
+                                            <input class="input-text input-text--primary-style" type="text" value="@Html.DisplayFor(model => model.FirstName)" name="lname" id="billing-lname" data-bill="">
+                                        </div>
+                                    </div>
+                                    <!--====== End - First Name, Last Name ======-->
+                                    <!--====== E-MAIL ======-->
+                                    <div class="u-s-m-b-15">
+
+                                        <label class="gl-label" for="billing-email">E-MAIL *</label>
+
+                                        <input class="input-text input-text--primary-style" type="email" value="@Model.UserName" name="email" id="billing-email" data-bill="">
+                                    </div>
+                                    <!--====== End - E-MAIL ======-->
+                                    <!--====== PHONE ======-->
+                                    <div class="u-s-m-b-15">
+
+                                        <label class="gl-label" for="billing-phone">PHONE *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" value="@Model.PhoneNumber" name="phone" id="billing-phone" data-bill="">
+                                    </div>
+                                    <!--====== End - PHONE ======-->
+                                    <!--====== Street Address ======-->
+                                    <div class="u-s-m-b-15">
+
+                                        <label class="gl-label" for="billing-street">City *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" name="city"  id="billing-street"  data-bill="">
+                                    </div>
+                                    <div class="u-s-m-b-15">
+
+                                        <label class="gl-label" for="billing-street">Amount to paid *</label>
+
+                                        <input class="input-text input-text--primary-style" type="text" name="city" value="@Model.Carts.FirstOrDefault().Total_Price" id="billing-street" placeholder="House name and street name" data-bill="">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6">
+                                <h1 class="checkout-f__h1">ORDER SUMMARY</h1>
+
+                                <!--====== Order Summary ======-->
+                                <div class="o-summary">
+
+                                    <div class="o-summary__section u-s-m-b-30">
+                                        <div class="o-summary__box">
+                                            <h1 class="checkout-f__h1">PAYMENT INFORMATION</h1>
+
+                                            <div class="u-s-m-b-10">
+
+                                                <!--====== Radio Box ======-->
+                                                <div class="radio-box">
+
+                                                    <input type="radio" value="cash" id="cash-on-delivery" name="payment">
+                                                    <div class="radio-box__state radio-box__state--primary">
+                                                        <label class="radio-box__label" for="cash-on-delivery">Cash on Delivery</label>
+                                                    </div>
+                                                </div>
+                                                <!--====== End - Radio Box ======-->
+
+                                                <span class="gl-text u-s-m-t-6">Pay Upon Cash on delivery. (This service is only available for some countries)</span>
+                                            </div>
+                                            <div class="u-s-m-b-10">
+
+                                                <!--====== Radio Box ======-->
+                                                <div class="radio-box">
+
+                                                    <input type="radio" value="Credit Card" id="pay-with-card" name="payment">
+                                                    <div class="radio-box__state radio-box__state--primary">
+
+                                                        <label class="radio-box__label" for="pay-with-card">Pay With Credit / Debit Card</label>
+                                                    </div>
+                                                </div>
+                                                <!--====== End - Radio Box ======-->
+
+                                                <span class="gl-text u-s-m-t-6">International Credit Cards must be eligible for use within the United States.</span>
+                                            </div>
+                                            <div class="u-s-m-b-10">
+
+                                                <!--====== Radio Box ======-->
+                                                <div class="radio-box">
+
+                                                    <input type="radio" id="pay-pal" value="paypal" name="payment">
+                                                    <div class="radio-box__state radio-box__state--primary">
+
+                                                        <label class="radio-box__label" for="pay-pal">Pay Pal</label>
+                                                    </div>
+                                                </div>
+                                                <!--====== End - Radio Box ======-->
+
+                                                <span class="gl-text u-s-m-t-6">When you click "Place Order" below we'll take you to Paypal's site to set up your billing information.</span>
+                                            </div>
+                                            <div class="u-s-m-b-15">
+
+                                                <!--====== Check Box ======-->
+                                                <div class="check-box">
+
+                                                    <input type="checkbox" id="term-and-condition">
+                                                    <div class="check-box__state check-box__state--primary">
+
+                                                        <label class="check-box__label" for="term-and-condition">I consent to the</label>
+                                                    </div>
+                                                </div>
+                                                <!--====== End - Check Box ======-->
+
+                                                <a class="gl-link">Terms of Service.</a>
+                                            </div>
+                                            <div>
+
+                                                <button class="btn btn--e-brand-b-2" type="submit">PLACE ORDER</button>
+                                            </div>
+                                            @*------------------------------------*@
+                                            <div id="smart-button-container">
+                                                <div style="text-align: center;">
+                                                    <div id="paypal-button-container"></div>
+                                                </div>
+                                            </div>
+                                            <script src="https://www.paypal.com/sdk/js?client-id=AYOPFmJHKEp34Obn8Gp5EJhzo8qOotnJl2Y6lj3E72wh3UcV-V-gVaGPkM-bR-XvEfuvN5ZhSeOgZk6R&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+                                            <script>
+                                                function initPayPalButton() {
+                                                    paypal.Buttons({
+                                                        style: {
+                                                            shape: 'rect',
+                                                            color: 'gold',
+                                                            layout: 'vertical',
+                                                            label: 'paypal',
+
+                                                        },
+
+                                                        createOrder: function (data, actions) {
+                                                            return actions.order.create({
+                                                                purchase_units: [{ "amount": { "currency_code": "USD", "value": 1 } }]
+                                                            });
+                                                        },
+
+                                                        onApprove: function (data, actions) {
+                                                            return actions.order.capture().then(function (orderData) {
+
+                                                                // Full available details
+                                                                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+                                                                // Show a success message within this page, e.g.
+                                                                const element = document.getElementById('paypal-button-container');
+                                                                element.innerHTML = '';
+                                                                element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+                                                                // Or go to another URL:  actions.redirect('thank_you.html');
+
+                                                            });
+                                                        },
+
+                                                        onError: function (err) {
+                                                            console.log(err);
+                                                        }
+                                                    }).render('#paypal-button-container');
+                                                }
+                                                initPayPalButton();
+                                            </script>
+                                            @*--------------------------------------*@
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--====== End - Order Summary ======-->
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section Content ======-->
+</div>
+<!--====== End - Section 3 ======-->
+<!--====== End - App Content ======-->

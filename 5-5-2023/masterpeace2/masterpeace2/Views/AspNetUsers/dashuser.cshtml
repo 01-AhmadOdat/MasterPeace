@@ -1,0 +1,230 @@
+﻿@model IEnumerable<masterpeace2.AspNetUser>
+
+@{
+    Layout = "~/Views/Shared/_LayoutAdminDash.cshtml";
+}
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailConfirmed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecurityStamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LockoutEnabled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccessFailedCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PasswordHash)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecurityStamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LockoutEnabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccessFailedCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+<div class="u-s-m-b-8">
+    @*@using (Html.BeginForm("Searchacc", "Products", new { }, FormMethod.Post, new { @class = "my-form-class" }))*@
+    @using (Html.BeginForm("SearchUser", "AspNetUsers"))
+    {
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="search" id="search" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" style="padding:5px 20px 14px" type="submit"><i class="icon-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            @*<th>
+                                @Html.DisplayNameFor(model => model.EmailConfirmed)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PasswordHash)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SecurityStamp)
+                            </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.PhoneNumber)
+                            </th>
+                            @*<th>
+                                @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+                            </th*@
+                            @*<th>
+                                @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LockoutEnabled)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AccessFailedCount)
+                            </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                @*<td>
+                                    @Html.DisplayFor(modelItem => item.EmailConfirmed)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PasswordHash)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SecurityStamp)
+                                </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                </td>
+                                @*<td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
+                                </td>*@
+                                @*<td>
+                                    @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LockoutEnabled)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AccessFailedCount)
+                                </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

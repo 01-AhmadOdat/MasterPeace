@@ -1,0 +1,98 @@
+﻿@model IEnumerable<masterpeace2.Product>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category_Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category_Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discription)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+@foreach (var item in Model)
+{
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item @Html.DisplayFor(modelItem => item.Category_ID)">
+        <div class="product-o product-o--hover-on product-o--radius">
+            <div class="product-o__wrap">
+
+                <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+
+                    <img class="aspect__img" src="~/photos for masterpeace/@Html.DisplayFor(modelItem => item.Image1)" alt="">
+                </a>
+                <div class="product-o__action-wrap">
+                    <ul class="product-o__action-list">
+                        <li>
+
+                            <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick View"><i class="fas fa-search-plus"></i></a>
+                        </li>
+                        <li>
+
+                            <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a>
+                        </li>
+                        <li>
+
+                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
+                        </li>
+                        <li>
+
+                            <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <span class="product-o__category">
+
+                <a href="shop-side-version-2.html"> @Html.DisplayFor(modelItem => item.Category.Category_Name)</a>
+            </span>
+
+            <span class="product-o__name">
+                @*"~/Products/TheDetails?id=@item.ID"*@
+                
+                <a href=@Url.Action("TheDetails", "products", new { id = item.ID })>@Html.DisplayFor(modelItem => item.Product_Name)</a>
+            </span>
+            @*<div class="product-o__rating gl-rating-style">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+
+                <span class="product-o__review">(23)</span>
+            </div>*@
+
+            <span class="product-o__price"><span style="font-size:13px">JD</span>        
+                @Html.DisplayFor(modelItem => item.Price)
+
+                @*<span class="product-o__discount">$160.00</span>*@
+            </span>
+        </div>
+    </div>
+}

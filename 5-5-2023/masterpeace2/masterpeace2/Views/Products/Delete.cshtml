@@ -1,0 +1,159 @@
+﻿@model masterpeace2.Product
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+@*<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Category_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Category_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resturant.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resturant.UserId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>*@
+
+
+<div class="col-md-7 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="Resturant_Name" class="control-label col-md-3">Product Name</label>
+                @*@Html.LabelFor(model => model.Product_Name, htmlAttributes: new { @class = "control-label col-md-3" })*@
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Product_Name, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.Image4, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Image4, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>*@
+        <div class="form-group">
+            <label for="Resturant_Name" class="control-label col-md-3">Category</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Category.Category_Name, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Resturant.Name, htmlAttributes: new { @class = "control-label col-md-3" })*@
+                <label for="Resturant_Name" class="control-label col-md-3">Resturant Name</label>
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => model.Resturant.Name, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+
+            <div class="form-group">
+            @Html.LabelFor(model => model.Image1, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-10">
+                <img width="100" src="~/photos for masterpeace/@Html.DisplayFor(model => model.Image1)" />
+            </div>
+        </div>
+
+            <div>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+                @*@using (Html.BeginForm("firstconfirm", "Categories", new { id = Model.ID }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+
+                    <input type="submit" value="Delete" id="btnBatool" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }*@
+            </div>
+        </div>
+    </div>
+</div>
